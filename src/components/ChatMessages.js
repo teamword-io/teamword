@@ -12,9 +12,9 @@ const ChatMessages = ({ messages }) => {
         >
 
           {message.systemMsg && (
-              <>
+              <em>
               {message.username} {t(message.systemMsg)}
-              </>
+              </em>
           )}
 
           {(!message.username && !message.systemMsg) && message.msg}
