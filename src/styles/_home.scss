@@ -1,0 +1,43 @@
+#home-container {
+  padding-top: 100px;
+  max-width: 550px;
+
+  #logo {
+    margin: 0 auto 30px;
+  }
+}
+
+
+.nav-tabs {
+  .nav-item {
+    &:first-child {
+      .nav-link {
+        border-top-right-radius: 0;
+      }
+    }
+
+    &:last-child {
+      .nav-link {
+        border-top-left-radius: 0;
+      }
+    }
+  }
+  .nav-link {
+    background: #ebebeb;
+    height: 58px;
+    border: 0 none;
+
+    &.active {
+      background: #fff;
+      border-color: transparent;
+    }
+  }
+}
+
+.tab-pane {
+  .card {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: 0 none;
+  }
+}

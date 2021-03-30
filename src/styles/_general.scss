@@ -1,0 +1,144 @@
+body {
+  background-color: #DCE0E3;
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  color: #404346;
+  margin-bottom: 50px;
+  padding: 40px;
+}
+
+h4 {
+  margin: 0;
+}
+
+.error {
+  color: $red;
+  font-size: 80%;
+}
+
+.content {
+  padding: 30px 0px 30px 0px;
+  min-height: calc(100vh - 70px);
+}
+
+.form-control, .form-select {
+  height: 56px;
+}
+
+#teambox {
+  .error-msg {
+    display: none;
+    color: $red;
+    background: #f1f1f1;
+    position: absolute;
+    right: 45px;
+    top: 28px;
+    padding: 0.4rem;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+
+  .has-error {
+    .form-control {
+      border-color: $red;
+    }
+
+    .error-msg {
+      display: block;
+    }
+  }
+
+
+  span {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.btn {
+  border-radius: 20px;
+  border: 0 none;
+  height: 56px;
+  &.btn-primary {
+    color: #000;
+  }
+
+  &.btn-full-width {
+    width: 100%;
+  }
+}
+
+.card {
+  .card-header {
+    border-bottom: 0;
+  }
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.nav-justified {
+  .nav-link {
+    width: 100%;
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
+}
+
+#logo {
+  width: 310px;
+  height: 33px;
+  background-image: url("../images/logo_light.png");
+  background-size: contain;
+  margin: auto;
+}
+
+#footer {
+  background-color: $dark-tiles;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 1rem;
+  z-index: 10;
+
+  button {
+    background: transparent;
+    border: 0 none;
+    color: #fff;
+  }
+}
+
+#audio-toggle button {
+  width: 48px;
+  height: 48px;
+  background-image: url("../images/audio-on.png");
+  background-size: cover;
+  border: 0 none;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background-color: transparent;
+  &.off {
+    background-image: url("../images/audio-off.png");
+  }
+}
+
+.privacy-icon {
+  margin: 0 auto 20px;
+  background-image: url(../images/privacy.png);
+  width: 96px;
+  height: 96px;
+}
+
+.roundscore-icon {
+  margin: 0 auto 20px;
+  background-image: url(../images/roundscores.png);
+  width: 96px;
+  height: 96px;
+}

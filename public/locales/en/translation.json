@@ -1,0 +1,70 @@
+{
+  "darkmode": {
+    "dark": "Dark",
+    "light": "Light"
+  },
+  "home": {
+    "create": "Create game",
+    "join": "Join Game",
+    "username": "Enter your username",
+    "roomID": "Enter your Room-ID",
+    "roomError": "There is no game with this Room-ID",
+    "howto": {
+      "headline": "How to play",
+      "text1": "The game forms teams of 2 to 3 players. A team has to describe a certain word. The team's players take turns describing it word for word without discussing it beforehand. The other players try to guess the word. The faster the word is guessed, the more points the player gets.",
+      "text2": "If all players have guessed the word, or the round is up, it is the next team's turn."
+    }
+  },
+  "cookie": {
+    "imprint": "Imprint",
+    "text": "We use cookies to make your experience better."
+  },
+  "lobby": {
+    "settings": "Settings",
+    "players": "Players",
+    "language": "Word-Language",
+    "rounds": "Rounds",
+    "roundTime": "Round time in seconds",
+    "startGame": "Spiel starten",
+    "invite": "Invite your friends with the following link:",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyown": "Copy on your own",
+    "you": "(you)",
+    "lang": {
+      "en": "English",
+      "de": "German",
+      "fr": "French",
+      "it": "Italian",
+      "nl": "Dutch"
+    }
+  },
+  "avatar": {
+    "shuffle": "Random Avatar",
+    "head": "Change heade",
+    "eyes": "Change eyes",
+    "mouth": "Change mouth"
+  },
+  "game": {
+    "round": "Runde",
+    "waiting": "Waiting",
+    "guess": "Type your guess",
+    "guessedCorrectly": " guessed the word correctly",
+    "need": "Need",
+    "moreplayers": "more player(s) to start the game",
+    "canstart": "Game can start.",
+    "points": "Punkte",
+    "nextWort": "Type the next word",
+    "yourTurn": "Your turn!",
+    "wordReveal": "The word was",
+    "nextTeam": "be ready it is your turn next.",
+    "winner": "And the winner is:",
+    "gameover": "Game over",
+    "backToLobby": "Back to lobby",
+    "chooseWord": "Choose word",
+    "chooseWordInfo": "Choose the word you want to explain",
+    "wordWillChoose": "Word gets chosen",
+    "wordWillChooseInfo": "The word for the next round is selected.",
+    "wrongWord": "Only one word"
+  }
+}

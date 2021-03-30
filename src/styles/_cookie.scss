@@ -1,0 +1,76 @@
+.cookie-message {
+  left: 32px;
+  width: 310px;
+  bottom: 70px;
+  z-index: 10;
+  position: fixed;
+  text-align: center;
+  transition: all 0.75s ease;
+  border-radius: 24px;
+  background-color: #FFF;
+
+  .body {
+    display: grid;
+    padding: 24px 32px;
+    grid-template-rows: auto auto;
+
+    img {
+      justify-self: center;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 34px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+  }
+
+  .footer {
+    .actions {
+      width: 100%;
+      display: inline-flex;
+      border-radius: 4px;
+
+      button.accept-btn {
+        width: 100%;
+        height: 56px;
+        padding-left: 0;
+        border-radius: 0;
+        font-size: 14px;
+        padding-right: 0;
+        color: #fff;
+        background-color: #000000;
+        border-bottom-right-radius: 24px;
+
+        &:hover {
+          background: $light-green;
+          color: #000;
+        }
+      }
+
+      button.privacy-btn {
+        width: 100%;
+        display: block;
+        height: 56px;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 40px;
+        border-radius: 0;
+        border-bottom-left-radius: 24px;
+        &:hover {
+          background: $lightgrey;
+        }
+      }
+    }
+  }
+
+}

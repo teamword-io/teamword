@@ -1,0 +1,26 @@
+#roundinfo-container {
+  margin-bottom: 30px;
+  font-size: 20px;
+  #round-word {
+    letter-spacing: 5px;
+    font-weight: bold;
+  }
+
+  #round-timer {
+    font-size: 24px;
+    width: 100px;
+    position: relative;
+    padding-left: 50px;
+
+    .icon-timer {
+      background-image: url("../images/timer.png");
+      background-size: cover;
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      top: -9px;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+#scoreboard {
+  .card-body {
+    padding: 0;
+
+    .user-row {
+      height: 45px;
+      position: relative;
+      padding-left: 70px;
+      padding-top: 2px;
+
+      .rank {
+        position: absolute;
+        top: 11px;
+        left: 8px;
+      }
+
+      & > div {
+        display: inline-block;
+      }
+
+      .avatar {
+        position: absolute;
+        left: 35px;
+        top: 5px;
+        width: 30px;
+        height: 30px;
+      }
+
+      .user-with-points {
+        font-size: 0.9rem;
+      }
+    }
+
+    .active-user {
+      background: $light-green;
+      color: #fff;
+    }
+  }
+}

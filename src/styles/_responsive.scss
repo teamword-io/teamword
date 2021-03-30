@@ -1,0 +1,100 @@
+@media (max-width: 1024px) {
+  #root {
+    margin-bottom: 60px;
+  }
+  body {
+    font-size: 90%;
+    padding: 20px;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  #header {
+    #logo {
+      width: 200px;
+      height: 20px;
+      background-size: cover;
+    }
+  }
+
+  #audio-toggle {
+    button {
+      top: 5px;
+    }
+  }
+
+  #dark-theme-toggle {
+    top: 16px;
+    h6 {
+      display: none;
+    }
+  }
+
+  .form-control, .form-select {
+    height: 40px;
+  }
+
+  .card-footer {
+    padding: 1rem;
+  }
+
+  #scoreboard {
+    display: none;
+  }
+
+  #footer {
+    position: static;
+  }
+
+  #roundinfo-container {
+    font-size: 16px;
+
+    #round-timer {
+      font-size: 16px;
+      width: 70px;
+      padding-left: 40px;
+      .icon-timer {
+        width: 36px;
+        height: 36px;
+        top: -8px;
+      }
+    }
+    #round-word {
+      font-size: 14px;
+    }
+    #round-no {
+      font-size: 12px;
+    }
+  }
+
+  #game-container {
+    > div {
+      min-height: 120px;
+
+      &#chatbox {
+        margin-top: 20px;
+        height: 100px;
+      }
+
+    }
+  }
+
+  #game-container .card {
+    height: auto;
+    #chatbox-messages {
+      height: 60px;
+    }
+  }
+
+  .md-modal .md-content{
+    padding: 15px;
+  }
+}
+

@@ -1,0 +1,55 @@
+// Required
+@import "~bootstrap/scss/functions";
+@import "variables";
+@import "~bootstrap/scss/mixins";
+@import "fonts";
+
+$font-family-base: 'Montserrat';
+$bg-light: #DCE0E3;
+$bg-dark: #1e1e2f;
+$bg-dark-light: #4e5175;
+$dark-tiles: #363852;
+$red: #fc5c65;
+$green: #3ab54a;
+$light-green: #A2E0A5;
+$lightgrey: #ebebeb;
+
+$primary: $light-green;
+
+$theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+);
+
+$border-radius: 24px;
+
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/utilities/api";
+@import "general";
+@import "scoreboard";
+@import "home";
+@import "lobby";
+@import "roundInfo";
+@import "game";
+@import "cookie";
+@import "avatar";
+@import "modal";
+@import "darkmode";
+@import "responsive";

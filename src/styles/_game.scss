@@ -1,0 +1,75 @@
+#teambox {
+  .card-footer {
+    position: relative;
+  }
+
+  .your-turn {
+    background-color: $green;
+    transition: all 0.2s;
+    color: #fff;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 24px;
+    line-height: 51px;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+#game-container {
+  > div {
+    min-height: 400px;
+  }
+
+  .card {
+    height: 100%;
+    &.team-card {
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    #chatbox-messages {
+      overflow-y: auto;
+      height: calc(100vh - 389px);
+    }
+
+  }
+}
+
+#chatbox {
+  .msg-good {
+    color: $green;
+  }
+}
+
+#winner-overlay {
+  .winner {
+    text-align: center;
+    .winner-icon {
+      margin: 0 auto 20px;
+      background-image: url(../images/winner.png);
+      width: 96px;
+      height: 96px;
+    }
+  }
+  .single-user {
+    width: 180px;
+  }
+
+  .winner-confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+}

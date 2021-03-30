@@ -1,0 +1,180 @@
+#avatar-settings {
+  position: relative;
+}
+#shuffle-avatar {
+  position: absolute;
+  left: 0;
+  top: 54px;
+  background-image: url("../images/shuffle.png");
+  width: 48px;
+  height: 48px;
+  background-size: cover;
+  border: 0 none;
+  background-color: transparent;
+  transition: transform 1s ease-in-out;
+
+  &:hover {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+#avatar-container {
+  padding: 30px 0;
+
+  .avatar {
+    margin: auto;
+  }
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  .head {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    margin: auto;
+    &.h1 {
+      background-color: #fc5c65;
+    }
+    &.h2 {
+      background-color: #fd9644;
+    }
+    &.h3 {
+      background-color: #fed330;
+    }
+    &.h4 {
+      background-color: #26de81;
+    }
+    &.h5 {
+      background-color: #2bcbba;
+    }
+    &.h6 {
+      background-color: #45aaf2;
+    }
+    &.h7 {
+      background-color: #4b7bec;
+    }
+    &.h8 {
+      background-color: #a55eea;
+    }
+    &.h9 {
+      background-color: #d1d8e0;
+    }
+    &.h10 {
+      background-color: #778ca3;
+    }
+  }
+
+  .eyes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    &.e1 {
+      background-image: url("../images/avatar/e01.png");
+    }
+    &.e2 {
+      background-image: url("../images/avatar/e02.png");
+    }
+    &.e3 {
+      background-image: url("../images/avatar/e03.png");
+    }
+    &.e4 {
+      background-image: url("../images/avatar/e04.png");
+    }
+    &.e5 {
+      background-image: url("../images/avatar/e05.png");
+    }
+    &.e6 {
+      background-image: url("../images/avatar/e06.png");
+    }
+    &.e7 {
+      background-image: url("../images/avatar/e07.png");
+    }
+    &.e8 {
+      background-image: url("../images/avatar/e08.png");
+    }
+    &.e9 {
+      background-image: url("../images/avatar/e09.png");
+    }
+    &.e10 {
+      background-image: url("../images/avatar/e10.png");
+    }
+  }
+
+  .mouth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    &.m1 {
+      background-image: url("../images/avatar/m01.png");
+    }
+    &.m2 {
+      background-image: url("../images/avatar/m02.png");
+    }
+    &.m3 {
+      background-image: url("../images/avatar/m03.png");
+    }
+    &.m4 {
+      background-image: url("../images/avatar/m04.png");
+    }
+    &.m5 {
+      background-image: url("../images/avatar/m05.png");
+    }
+    &.m6 {
+      background-image: url("../images/avatar/m06.png");
+    }
+    &.m7 {
+      background-image: url("../images/avatar/m07.png");
+    }
+    &.m8 {
+      background-image: url("../images/avatar/m08.png");
+    }
+    &.m9 {
+      background-image: url("../images/avatar/m09.png");
+    }
+    &.m10 {
+      background-image: url("../images/avatar/m10.png");
+    }
+  }
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.settings-buttons {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  width: 40px;
+  button {
+    background-color: transparent;
+    border: 0 none;
+    width: 40px;
+    height: 40px;
+  }
+  .change-head {
+    border-radius: 20px;
+    background-color: #fed330;
+  }
+  .change-eyes {
+    background-image: url("../images/eyes.png");
+    background-size: cover;
+  }
+  .change-mouth {
+    background-image: url("../images/mouth.png");
+    background-size: cover;
+  }
+}

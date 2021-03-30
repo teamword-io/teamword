@@ -1,0 +1,70 @@
+{
+  "darkmode": {
+    "dark": "Dunkel",
+    "light": "Hell"
+  },
+  "home": {
+    "create": "Spiel erstellen",
+    "join": "Spiel beitreten",
+    "username": "Benutzernamen eingeben",
+    "roomID": "Spiel-ID eingeben",
+    "roomError": "Es gibt kein Spiel mit der Spiel-ID",
+    "howto": {
+      "headline": "Wie wird gespielt",
+      "text1": "Das Spiel besteht aus Teams mit 2 bis 3 Spielern. Ein Team muss ein bestimmtes Wort beschreiben. Die Spieler des Teams beschreiben es abwechselnd Wort für Wort, ohne es vorher zu besprechen. Die anderen Spieler versuchen das Wort zu erraten. Je schneller das Wort erraten wird, desto mehr Punkte erhält der Spieler.",
+      "text2": "Wenn alle Spieler das Wort erraten haben oder die Runde beendet ist, ist das nächste Team an der Reihe."
+    }
+  },
+  "cookie": {
+    "imprint": "Impressum",
+    "text": "Wir benutzen Cookies um deine Erfahrung zu verbessern."
+  },
+  "lobby": {
+    "settings": "Einstellungen",
+    "players": "Spieler",
+    "language": "Wort-Sprache",
+    "rounds": "Runden",
+    "roundTime": "Rundenzeit in Sekunden",
+    "startGame": "Spiel starten",
+    "invite": "Lade deine Freunde mit dem folgenden Link ein:",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "copyown": "Kopiere es selbst",
+    "you": "(du)",
+    "lang": {
+      "en": "Englisch",
+      "de": "Deutsch",
+      "fr": "Französisch",
+      "it": "Italienisch",
+      "nl": "Niederländisch"
+    }
+  },
+  "avatar": {
+    "shuffle": "Zufälliges Avatar",
+    "head": "Kopf ändern",
+    "eyes": "Augen ändern",
+    "mouth": "Mund ändern"
+  },
+  "game": {
+    "round": "Runde",
+    "waiting": "Warten",
+    "guess": "Gebe deinen Tipp ab",
+    "guessedCorrectly": " hat das Wort erraten",
+    "need": "Benötige",
+    "moreplayers": "weitere(n) Spieler um das Spiel starten zu können",
+    "canstart": "Spiel kann gestartet werden.",
+    "points": "Punkte",
+    "nextWort": "Tippe das nächste Wort",
+    "yourTurn": "Du bist dran!",
+    "wordReveal": "Das Wort war",
+    "nextTeam": "macht euch bereit, ihr seid als nächstes dran.",
+    "winner": "Und der Gewinner ist:",
+    "gameover": "Spielende",
+    "backToLobby": "Zurück zur Lobby",
+    "chooseWord": "Wort auswählen",
+    "chooseWordInfo": "Wähle das Wort aus, da ihr erklären wollt",
+    "wordWillChoose": "Wort wird ausgewählt",
+    "wordWillChooseInfo": "Es wird das Wort für die nächste Runde ausgewählt.",
+    "wrongWord": "Nur ein Wort"
+  }
+}
