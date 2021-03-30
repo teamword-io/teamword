@@ -7,6 +7,7 @@ import {SocketContext} from '../providers/SocketProvider';
 import {useTranslation} from "react-i18next";
 import useSound from 'use-sound';
 import Avatar from "./Avatar";
+import safeGTAG from "../helper/gtag";
 
 const Lobby = (props) => {
     const {  users, actionType, roomID, canStart, haveSound, settings, setSettings } = React.useContext(
@@ -81,6 +82,9 @@ const Lobby = (props) => {
                                             return;
                                         }
                                         socket.emit('gameStart', settings);
+                                        safeGTAG('event','start_game', {
+                                            players: document.querySelectorAll('.lobby-users').length
+                                        });
                                         setIsClicked(true);
                                     }}
                                 >

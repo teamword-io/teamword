@@ -4,6 +4,7 @@ import Header from "./Header";
 import AvatarSettings from "./AvatarSettings";
 import {useTranslation} from "react-i18next";
 import {GameContext} from "../providers/GameProvider";
+import safeGTAG from "../helper/gtag";
 
 const Home = (props) => {
     const [usernameInput, setUsernameInput] = React.useState('');
@@ -61,6 +62,7 @@ const Home = (props) => {
                                 }, ( response) =>{
                                     props.setRoomID(response.roomID);
                                     props.setSettings(settings);
+                                    safeGTAG('event','create_game',{});
                                 });
                             }
                         }}
@@ -104,6 +106,7 @@ const Home = (props) => {
                                         props.setRoomID(response.roomID);
                                         setSettings(response.settings);
                                         props.setSettings(response.settings);
+                                        safeGTAG('event','join_game',{roomID: response.roomID});
                                     } else {
                                         setRoomIDError(true);
                                     }

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {SocketContext} from "./SocketProvider";
+import safeGTAG from "../helper/gtag";
 export const GameContext = React.createContext({});
 
 const GameProvider = (props) => {
@@ -99,6 +100,7 @@ const GameProvider = (props) => {
       setIsGameStarted(false);
       setIsWaitingForNextRd(false);
       setIsGameEnd(true);
+      safeGTAG('event','end_game');
     });
 
     socket.on('exitGame', () => {
