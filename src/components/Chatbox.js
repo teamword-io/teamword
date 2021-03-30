@@ -14,7 +14,7 @@ const Chatbox = () => {
 
     React.useEffect(() => {
         socket.on('chatMsg', (msg) => {
-            if(msg.systemMsg && haveSound) {
+            if(msg.systemMsg === 'game.guessedCorrectly' && haveSound) {
                 play();
             }
             setMessages([...messages, msg]);

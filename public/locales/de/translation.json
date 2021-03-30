@@ -50,6 +50,7 @@
     "waiting": "Warten",
     "guess": "Gebe deinen Tipp ab",
     "guessedCorrectly": " hat das Wort erraten",
+    "wasNear": "Nah dran! Das gesuchte Wort ist ähnlich",
     "need": "Benötige",
     "moreplayers": "weitere(n) Spieler um das Spiel starten zu können",
     "canstart": "Spiel kann gestartet werden.",

@@ -50,6 +50,7 @@
     "waiting": "Waiting",
     "guess": "Type your guess",
     "guessedCorrectly": " guessed the word correctly",
+    "wasNear": "That was close! The searched word is similar.",
     "need": "Need",
     "moreplayers": "more player(s) to start the game",
     "canstart": "Game can start.",
