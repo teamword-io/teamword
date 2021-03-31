@@ -10,7 +10,7 @@ import Avatar from "./Avatar";
 import safeGTAG from "../helper/gtag";
 
 const Lobby = (props) => {
-    const {  users, actionType, roomID, canStart, haveSound, settings, setSettings } = React.useContext(
+    const {  users, actionType, roomID, canStart, haveSound, settings, setSettings, teams } = React.useContext(
         GameContext
     );
     const [isClicked, setIsClicked] = React.useState(false);
@@ -18,16 +18,33 @@ const Lobby = (props) => {
 
     // translation
     const { t } = useTranslation();
-    const [play] = useSound('/sounds/join.mp3');
+    const [joinSound] = useSound('/sounds/join.mp3');
+    const [changeTeamSound] = useSound('/sounds/pop-up-on.mp3',{ volume: 0.60 });
 
     const socket = React.useContext(SocketContext);
 
-    function handleChange(evt) {
+    const handleChange = (evt) => {
         const value = evt.target.value;
         setSettings({
             ...settings,
             [evt.target.name]: value
         });
+    }
+
+    const changeTeam = (e) => {
+        if(haveSound) {
+            changeTeamSound();
+        }
+        let current = parseInt(e.currentTarget.dataset.team,10);
+        let maxTeamNo = Math.ceil(document.querySelectorAll('.player-list .lobby-users').length / 2);
+
+        if(maxTeamNo == 1) return;
+        let next = (current + 1 > maxTeamNo) ? 1 : current + 1;
+
+        e.currentTarget.setAttribute('data-team',next).textContent =next;
+
+        console.log(next);
+
     }
 
     React.useEffect(() => {
@@ -49,9 +66,9 @@ const Lobby = (props) => {
 
     React.useEffect( () => {
         if(haveSound) {
-            play();
+            joinSound();
         }
-    },[users, haveSound, play]);
+    },[users, haveSound, joinSound]);
 
     React.useEffect(() => {
         if(actionType === 'create') {
@@ -100,19 +117,34 @@ const Lobby = (props) => {
                                 <h4>{t('lobby.players')}</h4>
                             </div>
                             <div className="card-body">
-                                <div id="room-info">
+                                <div id="room-info" className="mb-2">
                                     {roomStatus}
                                 </div>
                                 <div className="player-list d-flex flex-wrap justify-content-evenly">
-                                    {users.map((user) => {
+
+                                    {teams.map((teamU, index) => {
                                         return (
-                                            <div className="lobby-users" key={user.id}>
-                                                <Avatar avatar={user.avatar}/>
-                                                <b>{user.username} {user.id === socket.id && t('lobby.you') }</b>
-                                            </div>
-                                        );
+                                            <>
+                                                {teamU.map((user) => {
+                                                    return (
+                                                        <div className="lobby-users" data-team={index +1} key={user.id}
+                                                             onClick={e => {
+                                                                 if(user.id === socket.id) {
+                                                                     changeTeam(e)
+                                                                 }
+                                                             }}
+                                                        >
+                                                            <span className="team-no">#{index +1}</span>
+                                                            <Avatar avatar={user.avatar}/>
+                                                            <b>{user.username} {user.id === socket.id && t('lobby.you') }</b>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </>
+                                        )
                                     })}
                                 </div>
+                                <p className="small">{t('lobby.changeTeam')}</p>
                             </div>
                         </div>
                     </div>
