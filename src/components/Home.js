@@ -142,7 +142,7 @@ const Home = (props) => {
                     </form>
                 </div>
 
-                <div className="card mt-3">
+                <div className="card my-3">
                     <div className="card-header">
                         <h4>{t('home.howto.headline')}</h4>
                     </div>
