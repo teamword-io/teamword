@@ -30,6 +30,8 @@
     "copy": "Copy",
     "copied": "Copied",
     "copyown": "Copy on your own",
+    "teamError": "The game is not playable with this team setup. Please change teams",
+    "gamestarts": "Game starts in: ",
     "changeTeam": "Change your team by clicking on your avatar.",
     "you": "(you)",
     "lang": {

@@ -15,6 +15,8 @@ const Lobby = (props) => {
     );
     const [isClicked, setIsClicked] = React.useState(false);
     const [roomStatus, setRoomStatus] = React.useState(false);
+    // const [counter, setCounter] = React.useState(3);
+    const [teamError, setTeamError] = React.useState(false);
 
     // translation
     const { t } = useTranslation();
@@ -35,16 +37,13 @@ const Lobby = (props) => {
         if(haveSound) {
             changeTeamSound();
         }
-        let current = parseInt(e.currentTarget.dataset.team,10);
+        let current = parseInt(e.currentTarget.dataset.team,10) +1;
         let maxTeamNo = Math.ceil(document.querySelectorAll('.player-list .lobby-users').length / 2);
 
-        if(maxTeamNo == 1) return;
+        if(maxTeamNo === 1) return;
         let next = (current + 1 > maxTeamNo) ? 1 : current + 1;
 
-        e.currentTarget.setAttribute('data-team',next).textContent =next;
-
-        console.log(next);
-
+        socket.emit('changeTeam', current -1, next -1);
     }
 
     React.useEffect(() => {
@@ -57,6 +56,12 @@ const Lobby = (props) => {
             }
 
             setRoomStatus(info);
+        });
+
+
+        socket.on('teamError', (msg) => {
+            setTeamError(true);
+            setIsClicked(false);
         });
 
         return () => {
@@ -98,9 +103,12 @@ const Lobby = (props) => {
                                         if (isClicked || !canStart) {
                                             return;
                                         }
-                                        socket.emit('gameStart', settings);
-                                        safeGTAG('event','start_game', {
-                                            players: document.querySelectorAll('.lobby-users').length
+                                        socket.emit('gameStart', settings, ( response) =>{
+                                            if(response.valid) {
+                                                safeGTAG('event','start_game', {
+                                                    players: document.querySelectorAll('.lobby-users').length
+                                                });
+                                            }
                                         });
                                         setIsClicked(true);
                                     }}
@@ -121,30 +129,49 @@ const Lobby = (props) => {
                                     {roomStatus}
                                 </div>
                                 <div className="player-list d-flex flex-wrap justify-content-evenly">
+                                    {teams.map((teamU, index) => {
+                                        return (
+                                            <>
+                                                {teamU.map((user) => {
+                                                    if(user.id === socket.id) {
+                                                        return (
+                                                            <div className="lobby-users" data-team={index} key={user.id}
+                                                                 onClick={e => {
+                                                                     changeTeam(e)
+                                                                 }}
+                                                            >
+                                                                <span className="team-no">#{index + 1}</span>
+                                                                <Avatar avatar={user.avatar}/>
+                                                                <b>{user.username} {t('lobby.you')}</b>
+                                                            </div>
+                                                        )
+                                                    } else return '';
+                                                })}
+                                            </>
+                                        )
+                                    })}
 
                                     {teams.map((teamU, index) => {
                                         return (
                                             <>
                                                 {teamU.map((user) => {
-                                                    return (
-                                                        <div className="lobby-users" data-team={index +1} key={user.id}
-                                                             onClick={e => {
-                                                                 if(user.id === socket.id) {
-                                                                     changeTeam(e)
-                                                                 }
-                                                             }}
-                                                        >
-                                                            <span className="team-no">#{index +1}</span>
-                                                            <Avatar avatar={user.avatar}/>
-                                                            <b>{user.username} {user.id === socket.id && t('lobby.you') }</b>
-                                                        </div>
-                                                    )
+                                                    if(user.id !== socket.id) {
+                                                        return (
+                                                            <div className="lobby-users" data-team={index} key={index+user.id}>
+                                                                <span className="team-no">#{index +1}</span>
+                                                                <Avatar avatar={user.avatar}/>
+                                                                <b>{user.username}</b>
+                                                            </div>
+                                                        )
+                                                    } else return '';
                                                 })}
                                             </>
                                         )
                                     })}
                                 </div>
                                 <p className="small">{t('lobby.changeTeam')}</p>
+
+                                {teamError && <p className="error">{t('lobby.teamError')}</p> }
                             </div>
                         </div>
                     </div>

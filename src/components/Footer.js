@@ -3,7 +3,7 @@ import {GameContext} from "../providers/GameProvider";
 import Privacy from "./Privacy";
 import WhatsNewOverlay from "./WhatsNewOverlay";
 const Footer = () => {
-    const { isGameEnd, isWaitingForNextRd,isChoosingWord } = React.useContext(
+    const { isGameEnd, isWaitingForNextRd,isChoosingWord,roundNo } = React.useContext(
         GameContext
     );
 
@@ -30,7 +30,7 @@ const Footer = () => {
         </footer>
         <Privacy modal={privacyModal} setPrivacyModal={setPrivacyModal}/>
         <WhatsNewOverlay modal={changelogModal} setPrivacyModal={setChangelogModal}/>
-        <div className={`md-overlay ${ (isGameEnd || isWaitingForNextRd || privacyModal || isChoosingWord || changelogModal) ? 'md-show' : ''}` }></div>
+        <div className={`md-overlay ${ ((isGameEnd && roundNo) || isWaitingForNextRd || privacyModal || isChoosingWord || changelogModal) ? 'md-show' : ''}` }></div>
         </>
     );
 };

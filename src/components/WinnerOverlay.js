@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 import useSound from "use-sound";
 
 const WinnerOverlay = () => {
-    const { users, isGameEnd, setIsGameEnd } = React.useContext(
+    const { users, isGameEnd, setIsGameEnd, roundNo } = React.useContext(
         GameContext
     );
     const { t } = useTranslation();
@@ -27,16 +27,16 @@ const WinnerOverlay = () => {
     };
 
     React.useEffect( () => {
-        if(isGameEnd) {
+        if(isGameEnd && roundNo) {
             setTimeout(() => {
                 play();
             },100);
         }
-    },[isGameEnd, play]);
+    },[isGameEnd, play, roundNo]);
 
     return (
       <>
-          <div className={`md-modal ${isGameEnd ? 'md-show' : ''} `} id="winner-overlay">
+          <div className={`md-modal ${(isGameEnd && roundNo) ? 'md-show' : ''} `} id="winner-overlay">
               <div className="md-content">
                   <h3>Game Over</h3>
                   <p>{t('game.winner')}</p>

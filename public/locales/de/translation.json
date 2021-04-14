@@ -30,6 +30,8 @@
     "copy": "Kopieren",
     "copied": "Kopiert",
     "copyown": "Kopiere es selbst",
+    "teamError": "Das Spiel ist mit der Teamauswahl nicht spielbar. Bitte die Teams anpassen.",
+    "gamestarts": "Spiel startet in: ",
     "changeTeam": "Ändere dein Team indem auf deinen Avatar klickst.",
     "you": "(du)",
     "lang": {

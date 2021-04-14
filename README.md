@@ -17,7 +17,8 @@ yarn build
 ```
 
 ## Changelog
-**1.0 - Initial Release**  
+**1.1.0 - Added feature to change teams, fixed several bugs**  
+**1.0.0 - Initial Release**  
 
 ## Author
 [Andre Rinas](https://www.andrerinas.de/) - [Github](https://github.com/andreknieriem/)

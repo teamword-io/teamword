@@ -7,8 +7,7 @@ import {useTranslation} from "react-i18next";
 const Teambox = () => {
     const [messages, setMessages] = React.useState([]);
     const {
-        writingPermission,
-        chooseWords
+        writingPermission
     } = React.useContext(GameContext);
     const { t } = useTranslation();
     const [isActive, setIsActive] = React.useState(writingPermission);

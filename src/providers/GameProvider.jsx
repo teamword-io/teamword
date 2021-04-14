@@ -115,6 +115,7 @@ const GameProvider = (props) => {
     });
 
     socket.on('addTeams', (teams) => {
+      if(!teams) return;
       setTeams(teams);
     });
 
